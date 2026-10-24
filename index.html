@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Расписание и свободные аудитории — IUCA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Расписание и свободные аудитории</h1>
+        <div class="sub">
+            IUCA · Осенний семестр 2026 · <span id="stat"></span>
+        </div>
+        <nav id="nav">
+            <button data-t="sch" class="on">Расписание</button><button data-t="mx">Аудитории по дням</button><button
+                data-t="fr">Свободные аудитории</button>
+        </nav>
+    </header>
+    <main>
+        <section id="sch">
+            <div class="bar">
+                <label>Направление<select id="ff"></select></label>
+                <label>Группа<select id="fg"></select></label>
+                <label>Преподаватель<select id="ft"></select></label>
+                <label>Аудитория<select id="fr"></select></label>
+                <label>День<select id="fd"></select></label>
+                <label>Поиск<input id="fq" placeholder="предмет, фамилия…"></label>
+                <button class="btn" id="rs">Сбросить</button>
+            </div>
+            <p class="cnt" id="c1"></p>
+            <div class="wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>День</th>
+                            <th>Время</th>
+                            <th>Аудитория</th>
+                            <th>Предмет</th>
+                            <th>Преподаватель</th>
+                            <th>Группы</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb"></tbody>
+                </table>
+            </div>
+        </section>
+        <section id="mx" hidden>
+            <div class="bar">
+                <label>День<select id="md"></select></label><label>Корпус<select
+                        id="mb"></select></label><label>Аудитория<input id="mq" placeholder="например A30"></label>
+            </div>
+            <div class="wrap">
+                <table class="mx">
+                    <thead id="mh"></thead>
+                    <tbody id="mt"></tbody>
+                </table>
+            </div>
+            <p class="cnt">
+                Зелёное — свободно, красное — идут пары. Нажмите на аудиторию, чтобы увидеть её расписание на неделю.
+            </p>
+        </section>
+        <section id="fr2" hidden>
+            <div class="bar">
+                <label>День<select id="xd"></select></label><label>Корпус<select id="xb"></select></label>
+                <label>Пары (свободна на всех выбранных)
+                    <div class="chips" id="xs"></div>
+                </label><button class="btn" id="now">Сейчас</button>
+            </div>
+            <p class="cnt" id="c3"></p>
+            <div id="xo"></div>
+
+        </section>
+    </main>
+
+    <div class="modal" id="pm" hidden role="dialog" aria-modal="true" aria-labelledby="pt">
+        <div class="mbox">
+            <div class="mhd">
+                <div>
+                    <h2 id="pt"></h2>
+                    <div class="sub" id="ps"></div>
+                </div>
+                <button type="button" class="btn" id="px" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="mimg">
+                <button type="button" class="nv" id="pp" aria-label="Назад">‹</button>
+                <img id="pi" alt="">
+                <div class="empty" id="pe"></div>
+                <button type="button" class="nv" id="pn" aria-label="Вперёд">›</button>
+            </div>
+            <div class="thumbs" id="th"></div>
+            <div class="cnt" id="pc"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Student of IT-123. Shirakhunov Abdu-Alim. I HATE AI because it steal my job</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
