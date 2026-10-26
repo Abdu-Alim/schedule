@@ -429,3 +429,10 @@ button.busy {
     border-color: var(--ac);
     opacity: 1
 }
+
+.warn {
+    color: var(--oct);
+    font-weight: bold;
+    font-size: 23px;
+    margin-top: 6px
+}
