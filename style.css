@@ -276,8 +276,11 @@ tr:last-child td {
 }
 
 .bld {
-    margin: 14px 0 6px;
-    font-weight: 600
+    width: 100%;
+    margin: 5px 0 6px;
+    font-weight: 600;
+    text-align: center;
+    font-size: large;
 }
 
 .free {
@@ -435,4 +438,23 @@ button.busy {
     font-weight: bold;
     font-size: 23px;
     margin-top: 6px
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 30px;
+    color: var(--tx);
+    background: var(--bg);
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+}
+
+.rep {
+    color: var(--tx);
+    font-size: 16px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    border: 1px solid var(--bd);
+    border-radius: 8px;
 }

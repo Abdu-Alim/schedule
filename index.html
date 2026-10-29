@@ -14,12 +14,12 @@
         <div class="sub">
             IUCA · Осенний семестр 2026 · <span id="stat"></span>
             <p class="warn">
-                Пришлось убрать рассписание колледжа, из-за конфликта связанного с тем, что там названы корпусы A, B, C. Поэтому рассписане будет оставаться не точным, пока я не получу информацию о рсаписании ГТК в МУЦА.
+                Если вы нашли ошибку в расписании, то можете сообщить об этом в разделе "НАЙДЕНА ОШИБКА!"
             </p>
         </div>
         <nav id="nav">
             <button data-t="sch" class="on">Расписание</button><button data-t="mx">Аудитории по дням</button><button
-                data-t="fr">Свободные аудитории</button>
+                data-t="fr">Свободные аудитории</button><button data-t="err" style="color: #c70000; font-weight: bold;;">НАЙДЕНА ОШИБКА!</button>
         </nav>
     </header>
     <main>
@@ -53,7 +53,7 @@
         <section id="mx" hidden>
             <div class="bar">
                 <label>День<select id="md"></select></label><label>Корпус<select
-                        id="mb"></select></label><label>Аудитория<input id="mq" placeholder="например A30"></label>
+                        id="mb"></select></label><label>Аудитория<input id="mq" placeholder="например A308"></label>
             </div>
             <div class="wrap">
                 <table class="mx">
@@ -75,6 +75,23 @@
             <p class="cnt" id="c3"></p>
             <div id="xo"></div>
 
+        </section>
+        <section id="err" hidden>
+            <p style="color: #ff0000; font-weight: bold; font-size: large;">
+                Если в аудитории проходит пара, то выберите её номер, день и время в которое проходит пара, и нажмите отправить.
+            </p>
+            <div class="bar">
+                <label>Аудитория<select id="er"></select></label>
+                <label>День<select id="ed"></select></label>
+                <label>Время<select id="et"></select></label>
+                <label>Комментарий<textarea id="ec" placeholder="Что и у кого?" maxlength="200"></textarea></label>
+                <button class="btn" id="es">Отправить</button>
+            </div>
+            <div class="bar">
+                <p id="est" class="cnt" style="color: #00ff2a;"></p>
+                <div class="bld">Уже сообщили</div>
+                <div id="el"></div>
+            </div>
         </section>
     </main>
 
@@ -100,12 +117,14 @@
 
     <footer>
         <p style="color: #ff0000;">
-            Нужны фотографии аудиторий: A212, А216, A217, A304, A306, A316, (A)CyberLAB, B001, B002, B100, B103, B104, B106, B201, B202, B207, B302, B306, B307
+            Нужны фотографии аудиторий: A212, А216, A217, A304, A306, A316, (A)CyberLAB, B001, B002, B100, B103, B104,
+            B106, B201, B202, B207, B302, B306, B307
         </p>
         <p>Created by Student of IT-123. Shirakhunov Abdu-Alim.</p>
     </footer>
 
     <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 
